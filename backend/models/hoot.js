@@ -1,20 +1,18 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
-const bcrypt = require('bcrypt');
 
-const commentSchema = new mongoose.Schema(
+const commentSchema = new Schema(
   {
     text: {
       type: String,
-      required: true
+      required: true,
     },
-    author: { type: mongoose.Schema.Types.ObjectId, ref: 'User' }
+    author: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
   },
   { timestamps: true }
 );
 
-
-const hootSchema = new mongoose.Schema(
+const hootSchema = new Schema(
   {
     title: {
       type: String,
@@ -33,11 +31,6 @@ const hootSchema = new mongoose.Schema(
     comments: [commentSchema], // add here
   },
   { timestamps: true }
-  );
+);
 
-
-const Hoot = mongoose.model('Hoot', hootSchema);
-
-
-module.exports = Hoot;
-
+module.exports = mongoose.model("Hoot", hootSchema);
