@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const hootsCtrl = require('../controllers/hoots');
+const commentsCtrl = require('../controllers/comments');
 const ensureLoggedIn = require('../middleware/ensureLoggedIn');
 
 // All paths start with '/api/hoots'
@@ -8,18 +8,17 @@ const ensureLoggedIn = require('../middleware/ensureLoggedIn');
 // Protect all defined routes
 router.use(ensureLoggedIn);
 
-// GET /api/hoots (INDEX action)
-router.get('/', hootsCtrl.index);
+
 // POST /api/hoots (CREATE action)
-router.post('/', hootsCtrl.create);
+router.post('/comments', commentsCtrl.create);
 
 //GET /api/hoots/:hootId (SHOW action)
-router.get('/:hootId', hootsCtrl.show);
+router.get('/comments', commentsCtrl.show);
 
 //GET /api/hoots/:hootId (UPDATE action)
-router.put('/:hootId', hootsCtrl.update);
+router.put('/comments', commentsCtrl.update);
 
 //GET /api/hoots/:hootId (UPDATE action)
-router.delete('/:hootId', hootsCtrl.deleteHoot);
+router.delete('/comments', commentsCtrl.deleteComment);
 
 module.exports = router;

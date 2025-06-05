@@ -27,7 +27,7 @@ async function create(req, res) {
     res.json(hoot);
   } catch (err) {
     console.log(err);
-    res.status(400).json({ message: 'Failed to creat hoot' });
+    res.status(400).json({ message: 'Failed to create hoot' });
   }
 }
 
