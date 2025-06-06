@@ -1,6 +1,6 @@
 import sendRequest from './sendRequest';
 
-const BASE_URL = '/api/hoots';
+const BASE_URL = '/api/comments';
  
 export async function index() {
   return sendRequest(BASE_URL);
