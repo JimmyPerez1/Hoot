@@ -1,6 +1,5 @@
 import { Link } from 'react-router';
 
-
 const HootList = (props) => {
   return (
     <main>
@@ -10,7 +9,7 @@ const HootList = (props) => {
             <header>
               <h2>{hoot.title}</h2>
               <p>
-                {`${hoot.author.username} posted on
+                {`${hoot.author.name} posted on
                 ${new Date(hoot.createdAt).toLocaleDateString()}`}
               </p>
             </header>
@@ -21,4 +20,5 @@ const HootList = (props) => {
     </main>
   );
 };
+
 export default HootList;

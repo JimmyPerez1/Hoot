@@ -6,8 +6,8 @@ import NewPostPage from '../NewPostPage/NewPostPage';
 import SignUpPage from '../SignUpPage/SignUpPage';
 import LogInPage from '../LogInPage/LogInPage';
 import NavBar from '../../components/NavBar/NavBar';
-import HootList from '../HootList/HootListPage';
-import HootDetails from '../HootDetailsPage/HootDetailsPage';
+import HootListPage from '../HootListPage/HootListPage';
+import HootDetailsPage from '../HootDetailsPage/HootDetailsPage';
 import * as hootService from '../../services/hootService';
 import './App.css';
 
@@ -32,7 +32,8 @@ export default function App() {
         {user ? (
           <Routes>
             <Route path="/" element={<HomePage />} />
-            <Route path="/hoots" element={<HootList hoots={hoots}/>} />
+            <Route path="/hoots" element={<HootListPage hoots={hoots}/>} />
+            <Route path="/hoots/:hootId" element={<HootDetailsPage />} />
             <Route path="/hoots/new" element={<NewPostPage />} />
             <Route path="*" element={null} />
           </Routes>

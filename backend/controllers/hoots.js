@@ -10,7 +10,7 @@ module.exports = {
 
 async function index(req, res) {
   try {
-    const hoots = await Hoot.find({});
+    const hoots = await Hoot.find({}).populate("author");
     res.json(hoots);
   } catch (err) {
     console.log(err);
