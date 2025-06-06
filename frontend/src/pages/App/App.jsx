@@ -6,7 +6,8 @@ import NewPostPage from '../NewPostPage/NewPostPage';
 import SignUpPage from '../SignUpPage/SignUpPage';
 import LogInPage from '../LogInPage/LogInPage';
 import NavBar from '../../components/NavBar/NavBar';
-import HootList from '../../components/HootList/HootList';
+import HootList from '../HootList/HootListPage';
+import HootDetails from '../HootDetailsPage/HootDetailsPage';
 import * as hootService from '../../services/hootService';
 import './App.css';
 

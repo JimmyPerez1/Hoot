@@ -1,10 +1,9 @@
-
 import { Link } from 'react-router';
 
 
 const HootList = (props) => {
   return (
- <main>
+    <main>
       {props.hoots.map((hoot) => (
         <Link key={hoot._id} to={`/hoots/${hoot._id}`}>
           <article>
