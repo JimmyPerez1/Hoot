@@ -57,22 +57,10 @@ async function update(req, res) {
 }
 
 async function deleteComment(req, res) {
-  try {
-    const hoot = await Hoot.findById(req.params.hootId);
-    const comment = hoot.comments.id(req.params.commentId);
-
-    if (!comment) return res.status(404).json({ message: "Comment not found" });
-
-    if (!comment.author.equals(req.user._id)) {
-      return res.status(403).send("You're not allowed to delete this comment");
-    }
-
-    comment.remove();
-    await hoot.save();
-
-    res.json({ message: "Comment deleted" });
-  } catch (err) {
-    console.log(err);
-    res.status(500).json({ err: err.message });
-  }
+  const hoot = await Hoot.findById(req.params.hootId);
+  hoot.comments = hoot.comments.filter(
+    (comment) => comment._id.toString() !== req.params.commentId
+  );
+  await hoot.save();
+  res.sendStatus(204);
 }

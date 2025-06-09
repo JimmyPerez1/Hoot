@@ -11,6 +11,7 @@ const HootDetails = () => {
     const newComment = await hootService.createComment(hootId, commentFormData);
     setHoot({ ...hoot, comments: [...hoot.comments, newComment] });
   };
+  pro
 
   useEffect(() => {
     const fetchHoot = async () => {
